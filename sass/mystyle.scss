@@ -1,0 +1,193 @@
+// todo
+
+// enelver ligne bandeau
+
+@charset "utf-8";
+
+// Google font
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&family=Open+Sans:wght@300;400;600;700&display=swap");
+
+// Couleur de la marque
+$beige-light: rgb(91, 80, 80);
+$beige-lighter: #eff0eb;
+$black: black;
+$white: white;
+$blue1: #001b5b;
+$blue2: #0c28dd;
+$blue-light: #1995ff;
+$blue-lighter: rgba(187, 223, 248, 0.238);
+
+// Changer les variables globales de Bulma de Font, icones et boutons
+$grey-dark: $beige-light;
+$grey-light: $beige-lighter;
+$primary: $white;
+$link: $blue1;
+$info: $blue-lighter;
+
+$title-family: "Mulish", sans-serif;
+$title-color: $blue1 !important;
+$title-weight: 700;
+
+$subtitle-family: "Open Sans", sans-serif;
+$subtitle-color: $blue1 !important;
+$subtitle-weight: 600;
+
+$paragraph-family: "Open Sans", sans-serif;
+$paragraph-color: $beige-light;
+$paragraph-weight: 400;
+
+$icon-color: $blue2;
+
+$button-family: "Mulish", sans-serif;
+
+$button-color: $white;
+$button-background-color: $blue-light;
+$button-hover-color: $white;
+$button-border-color: none;
+$button-hover-border-color: none;
+
+$card-radius: 1rem;
+
+// Changer les variables des composants
+$body-background-color: $white;
+
+$hero-border: 1px solid $blue1;
+
+$navbar-height: 5rem;
+$navbar-item-img-max-height: 7rem;
+$navbar-item-hover-background-color: none;
+
+// paragraphs
+.paragraphs {
+  font-family: $paragraph-family;
+  color: $paragraph-color;
+  font-weight: $paragraph-weight;
+}
+
+// icone
+i {
+  color: $icon-color;
+}
+
+// ajustement affichage desktop hero banner
+
+@media screen and (min-width: 769px) {
+  .hero.is-medium .hero-body {
+    padding-bottom: 1.5rem !important;
+    padding-top: 7rem !important;
+  }
+}
+
+// ajustement responsive screenshot
+
+@media only screen and (max-width: 769px) {
+  .screenshot1 {
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    transform: none !important;
+  }
+}
+
+// bandeaux
+
+.hero.is-info {
+  padding-bottom: 4rem !important;
+  padding-top: 4rem !important;
+  justify-content: center;
+
+  .subtitle {
+    margin-bottom: 1.5rem;
+  }
+  .subtitle i {
+    color: #ffdf00 !important;
+    font-size: 2rem;
+    line-height: 1.125;
+  }
+}
+
+// input
+.input {
+  width: 70% !important;
+}
+
+// bullet point w/ tick
+.icon-text {
+  display: flex !important;
+  align-items: center !important;
+
+  .icon {
+    margin-right: 1.5rem;
+  }
+}
+
+// button
+.button {
+  border-top: $blue1;
+  font-weight: 600;
+  box-shadow: 5px 5px 0px 0px $blue1 !important;
+}
+
+// custom margin
+
+.custom-margin-bottom {
+  margin-bottom: 0.5rem !important;
+}
+
+// mobile screenshot
+
+.is-border-round {
+  border-radius: 1px !important;
+}
+
+
+// button submit
+
+.custom-button {
+  background-color: $blue1 !important;
+  color: $white !important;
+  font-family: "Mulish", serif !important;
+  font-weight: 700;
+  box-shadow: none !important;
+
+  &:hover {
+    background-color: $blue-light !important;
+    color: $blue1 !important;
+    opacity: 1;
+    box-shadow: 0 0 65px -3px green !important;
+  }
+}
+
+// animation navbar
+
+.is-transparent {
+  animation: fade-in 1s;
+  background: rgba(255, 255, 255, 0.381) !important;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// custom scss fin
+
+// Import uniquement des modules utilisés
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/helpers/flexbox.sass";
+@import "../node_modules/bulma/sass/helpers/spacing.sass";
+@import "../node_modules/bulma/sass/helpers/typography.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+@import "../node_modules/bulma/sass/helpers/visibility.sass";
+@import "../node_modules/bulma/sass/components/card.sass";
