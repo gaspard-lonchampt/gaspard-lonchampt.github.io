@@ -4294,7 +4294,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .navbar-item img {
-  max-height: 7rem;
+  max-height: 3rem;
 }
 
 .navbar-item.has-dropdown {
@@ -5420,7 +5420,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   }
 }
 .hero.is-small .hero-body {
-  padding: 1.5rem;
+  padding: 0rem;
 }
 
 @media screen and (min-width: 769px), print {
