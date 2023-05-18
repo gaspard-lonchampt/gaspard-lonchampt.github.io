@@ -7648,6 +7648,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   background-repeat: no-repeat;
 } */
 
+.is-border-round {
+  border-radius: 5px;
+}
+
 .navbar {
   background-color: transparent !important;
 }
