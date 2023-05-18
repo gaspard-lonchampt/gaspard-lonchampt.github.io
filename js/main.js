@@ -26,3 +26,21 @@ $(document).ready(function() {
 
   });
 });
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+
+$('a[href="#top"]').on('click', function(e) {
+  e.preventDefault();
+  $('body, html').scrollTop(0, {
+    behavior: 'smooth'
+});
+});
+

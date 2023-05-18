@@ -12,9 +12,9 @@ $beige-light: rgb(91, 80, 80);
 $beige-lighter: #eff0eb;
 $black: black;
 $white: white;
-$blue1: #001b5b;
-$blue2: #0c28dd;
-$blue-light: #1995ff;
+$blue1: #8C4F5A;
+$blue2: #e5a50a;
+$blue-light: #BC8F8F;
 $blue-lighter: rgba(187, 223, 248, 0.238);
 
 // Changer les variables globales de Bulma de Font, icones et boutons
@@ -78,6 +78,10 @@ i {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // ajustement responsive screenshot
 
 @media only screen and (max-width: 769px) {
@@ -105,10 +109,26 @@ i {
   }
 }
 
+// body {
+//   background-image: url(../assets/paysage.jpg);
+// }
+
+.columns.is-vcentered {
+        align-items: center;
+        justify-content: center;
+}
+
 // input
 .input {
   width: 70% !important;
 }
+
+#description {
+  padding-top: 1rem !important;
+  padding-bottom: 5rem !important ;
+  height: 5vh !important;
+}
+
 
 // bullet point w/ tick
 .icon-text {
@@ -156,6 +176,13 @@ i {
     box-shadow: 0 0 65px -3px green !important;
   }
 }
+
+// logo
+.navbar-item img {
+  max-height: 3rem !important;
+}
+
+
 
 // animation navbar
 
