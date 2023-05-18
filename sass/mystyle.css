@@ -7649,7 +7649,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 } */
 
 .is-border-round {
-  border-radius: 5px;
+  border-radius: 2px !important;
 }
 
 .navbar {
