@@ -104,6 +104,13 @@ $navbar-dropdown-arrow: $white;
   color: $subtitle-color;
 }
 
+::placeholder {
+  color: $black !important;
+  opacity: 1;
+  text-align: center;
+  /* Firefox */
+}
+
 // icone
 i {
   color: $icon-color;
@@ -179,9 +186,9 @@ html {
 
 // button
 .button {
-  border-top: $white;
+  border-top: $secondary;
   font-weight: 600;
-  box-shadow: 5px 5px 0px 0px $white !important;
+  background-color: $secondary !important;
 }
 
 // custom margin

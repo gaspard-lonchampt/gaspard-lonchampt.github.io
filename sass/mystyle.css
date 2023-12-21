@@ -40,6 +40,20 @@
   color: #32598c;
 }
 
+::-moz-placeholder {
+  color: black !important;
+  opacity: 1;
+  text-align: center;
+  /* Firefox */
+}
+
+::placeholder {
+  color: black !important;
+  opacity: 1;
+  text-align: center;
+  /* Firefox */
+}
+
 i {
   color: white;
 }
@@ -99,9 +113,9 @@ html {
 }
 
 .button {
-  border-top: white;
+  border-top: #d9b1a3;
   font-weight: 600;
-  box-shadow: 5px 5px 0px 0px white !important;
+  background-color: #d9b1a3 !important;
 }
 
 .custom-margin-bottom {
