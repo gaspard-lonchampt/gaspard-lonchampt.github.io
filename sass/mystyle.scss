@@ -7,6 +7,20 @@
 // Google font
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&family=Open+Sans:wght@300;400;600;700&display=swap");
 
+@font-face {
+  font-family: "Kozuka Gothic Pr6N B";
+  src:
+    url("fonts/Kozuka Gothic Pr6N B.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar-item {
+  font-family: "Kozuka", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
 // Couleur de la marque
 $beige-light: rgb(91, 80, 80);
 $beige-lighter: #eff0eb;
@@ -56,8 +70,8 @@ $hero-border: 1px solid $blue1;
 $navbar-height: 5rem;
 $navbar-item-img-max-height: 7rem;
 $navbar-item-hover-background-color: none;
+$navbar-background-color: #f0b492;
 
-// paragraphs
 .paragraphs {
   font-family: $paragraph-family;
   color: $paragraph-color;
@@ -102,6 +116,7 @@ html {
   .subtitle {
     margin-bottom: 1.5rem;
   }
+
   .subtitle i {
     color: #ffdf00 !important;
     font-size: 2rem;
@@ -109,13 +124,9 @@ html {
   }
 }
 
-// body {
-//   background-image: url(../assets/paysage.jpg);
-// }
-
 .columns.is-vcentered {
-        align-items: center;
-        justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 // input
@@ -125,7 +136,7 @@ html {
 
 #description {
   padding-top: 1rem !important;
-  padding-bottom: 5rem !important ;
+  padding-bottom: 5rem !important;
   height: 5vh !important;
 }
 
@@ -182,8 +193,6 @@ html {
   max-height: 3rem !important;
 }
 
-
-
 // animation navbar
 
 .is-transparent {
@@ -195,6 +204,7 @@ html {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
