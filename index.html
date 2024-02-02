@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Flooz est la première application mobile de gestion de trésorerie" />
+    <meta name="description" content="Hortense Lot" />
     <meta name="robots" content="index, follow">
     <title>Hortense Lot</title>
     <link rel="icon" href="assets/images/harmony.png">
@@ -26,11 +26,11 @@
 
 <body>
     <header>
-        <nav id="show" class="navbar is-align-items-center" role="navigation" aria-label="main navigation">
+        <nav id="show" class="navbar is-align-items-center" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" href="index.html">
                     <figure class="image is-white">
-                        <img src="assets/images/logo.svg" alt="logo">
+                        <img src="assets/images/logo_white.svg" alt="logo">
                     </figure>
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -97,8 +97,8 @@
         </nav>
     </header>
 
+    <!-- paysage -->
     <main>
-        <!-- -- paysage  -->
         <section class="hero">
             <div class="hero-body" id="landscape">
                 <div class="is-flex is-justify-content-center is-align-items-center">
@@ -108,7 +108,6 @@
                 </div>
             </div>
         </section>
-        <section id="qui_je_suis"></section>
         <section class="hero is-fullfheight mt-6 pt-6 pb-1 container is-fluid has-text-centered" id="qui_je_suis">
             <!-- s'insipirer de cette partie pour faire le qui-suis-je -->
             <div class="columns mt-2 mb-6 is-vcentered" data-aos="fade-in" data-aos-easing="ease-in-sine">
@@ -173,8 +172,7 @@
                 <div class="column"></div>
                 <div class="column is-one-third">
                     <figure class="image is-fullwidth">
-                        <img class="is-rounded" src="assets/images/portrait HL.jpg" alt="portrait"
-                            class="is-border-round">
+                        <img class="is-rounded is-border-round" src="assets/images/portrait_HL.jpg" alt="portrait">
                     </figure>
                 </div>
                 <div class="column"></div>
@@ -765,7 +763,7 @@
             <div class="columns has-text-centered is-vcentered">
                 <div class="column is-1"></div>
                 <div class="column is-two-fifths">
-                    <div id="mc_embed_signup_scroll">
+                    <form action="/php/contact_form.php" method="post" enctype="multipart/form-data">
                         <div class="has-text-centered">
                             <h3 class="subtitle mt-2 is-uppercase">me contacter</h3>
                             <p class="control is-expanded">
@@ -777,6 +775,7 @@
                                     placeholder="Mail">
                                 <input type="text" value="" class="input is-link required email mb-4" id="description"
                                     placeholder="Votre besoin">
+                                <input type="text" name="phone" style="display: none;">
                             </p>
                             <p class="control">
                             </p>
@@ -791,7 +790,7 @@
                                     <p class="paragraphs echo_title has-text-left ">
                                         Mail:
                                     </p>
-                                    <p class="paragraphs">hlot@mailo.fr</p>
+                                    <p class="paragraphs">hlot@mailo.com</p>
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-center">
@@ -803,7 +802,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <button type="submit" id="submit-button">Envoyer
+                        </button>
+                    </form>
+                    <div id="error-messages"></div>
                     </form>
                 </div>
                 <div class="column"></div>

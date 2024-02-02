@@ -1,32 +1,11 @@
-// todo
-
-// enelver ligne bandeau
-
-@charset "utf-8";
+@charset "utf-";
 
 // Google font
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500&family=Open+Sans:wght@300;400;600;700&display=swap");
-
-@font-face {
-  font-family: 'Kozuka';
-  src: url('../assets/fonts/KozGoPr6N-Bold-AlphaNum.woff2') format('woff2'),
-    url('../assets/fonts/KozGoPr6N-Bold-AlphaNum.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Romelio Sans';
-  src: url('../assets/fonts/RomelioSans.woff2') format('woff2'),
-    url('../assets/fonts/RomelioSans.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 .navbar-item {
-  font-family: 'Kozuka', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: bold;
 }
@@ -44,22 +23,22 @@ $grey-light: $secondary;
 $link: $title;
 $info: $white;
 
-$title-family: "Kozuka Gothic Pr6N B", sans-serif;
+$title-family: "Roboto", sans-serif;
 $title-color: $white;
 $title-weight: bold;
 
-$subtitle-family: "Romelio", sans-serif;
+$subtitle-family: "Lato", sans-serif;
 $subtitle-color: $title;
 $subtitle-weight: bold;
 
-$paragraph-family: "Romelio", sans-serif;
+$paragraph-family: "Lato", sans-serif;
 $paragraph-color: $black;
 $paragraph-weight: normal;
 $paragraph-size: 0.90em;
 
 $icon-color: $white;
 
-$button-family: "Mulish", sans-serif;
+$button-family: "Roboto", sans-serif;
 
 $button-color: $white;
 $button-background-color: $white;
@@ -97,7 +76,7 @@ $navbar-dropdown-arrow: $white;
 .hortense {
   color: $subtitle-color !important;
   font-family: $subtitle-family !important;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .echo_title {
@@ -209,7 +188,7 @@ html {
 .custom-button {
   background-color: $white !important;
   color: $white !important;
-  font-family: "Mulish", serif !important;
+  font-family: "Roboto", serif !important;
   font-weight: 700;
   box-shadow: none !important;
 
@@ -223,25 +202,7 @@ html {
 
 // logo
 .navbar-item img {
-  max-height: 3rem !important;
-  color: $white !important;
-}
-
-// animation navbar
-
-.is-transparent {
-  animation: fade-in 1s;
-  background: rgba(255, 255, 255, 0.381) !important;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  max-height: 5rem !important;
 }
 
 // custom scss fin
