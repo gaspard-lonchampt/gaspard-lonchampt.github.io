@@ -1,68 +1,62 @@
 <?php
-// Check if form data is
-if ($_SERVER["REQUESTMETHOD"] != "") {
-    // Set a 40 (bad request response code and exit    http_response_(400
-    $error_message = "Il y a une erreur avec votre requête.";
+
+// Vérifier si la méthode de la requête est POST et si le bouton de soumission a été utilisé
+if ($_SERVER["REQUEST_METHOD"] != "POST" || !isset($_POST['submit'])) {
+    // Renvoyer un code de réponse 400 (Bad Request) et quitter
+    http_response_code(400);
+    $error_message = "Méthode de requête non valide ou le formulaire n'a pas été soumis correctement.";
     exit(json_encode(['error' => $error_message]));
 }
 
+// Vérifier le champ caché pour la protection contre les soumissions de formulaire automatisées
 if (!empty($_POST['phone'])) {
-    // The form submission was made by a bot, reject it
+    // La soumission a été effectuée par un bot, la rejeter
     exit;
 }
 
-// Sanitize and validate form data
-$name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-$name = preg_replace('/[^a-zA-Z\s]/', '', $name); // Remove any non-alphabet characters
-
-$email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
+// Assainir et valider les données du formulaire
+$name = htmlspecialchars(filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING));
+$surname = htmlspecialchars(filter_input(INPUT_POST, "surname", FILTER_SANITIZE_STRING));
+$email = htmlspecialchars(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    // Set a 400 (bad request) response code and exit
+    // Renvoyer un code de réponse 400 (Bad Request) et quitter
     http_response_code(400);
-    $error_message = "Merci d'entrer une adresse mail valide";
+    $error_message = "Merci d'entrer une adresse mail valide.";
     exit(json_encode(['error' => $error_message]));
 }
 
-$subject = trim(filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING));
+$subject = htmlspecialchars(trim(filter_input(INPUT_POST, "besoin", FILTER_SANITIZE_STRING)));
 if (empty($subject)) {
-    // Set a 400 (bad request) response code and exit
+    // Renvoyer un code de réponse 400 (Bad Request) et quitter
     http_response_code(400);
-    $error_message = "Merci de remplir le champ 'Sujet'";
+    $error_message = "Merci de remplir le champ 'Votre besoin'.";
     exit(json_encode(['error' => $error_message]));
 }
 
-$message = trim(filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING));
-if (empty($message)) {
-    // Set a 400 (bad request) response code and exit
-    http_response_code(400);
-    $error_message = "Merci de remplir le champ 'Besoin'";
-    exit(json_encode(['error' => $error_message]));
-}
+// Définir l'adresse e-mail du destinataire
+$recipient = "lonchamptgaspard@gmail.com"; // Remplacer par votre adresse e-mail destinataire
 
-// Set the recipient email address with a prefix to prevent email header injection
-$recipient = "lonchamptgaspard@gmail.com"; // Replace with your recipient email address
-$recipient = '=?UTF-8?B?' . base64_encode($recipient) . '?= <' . $recipient . '>';
+// Définir le sujet de l'e-mail
+$email_subject = "Nouveau contact de $name $surname : $subject";
 
-// Set the email subject
-$email_subject = "New contact from $name: $subject";
+// Construire le contenu de l'e-mail
+$email_content = "Nom : $name\n";
+$email_content .= "Prénom : $surname\n";
+$email_content .= "E-mail : $email\n\n";
+$email_content .= "Message :\n$subject\n";
 
-// Build the email content
-$email_content = "Name: $name\n";
-$email_content .= "Email: $email\n\n";
-$email_content .= "Message:\n$message\n";
-
-// Build the email headers
+// Construire les en-têtes de l'e-mail
 $email_headers = "From: $name <$email>";
 
-// Send the email
+// Envoyer l'e-mail
 if (mail($recipient, $email_subject, $email_content, $email_headers)) {
-    // Set a 200 (okay) response code
+    // Renvoyer un code de réponse 200 (OK)
     http_response_code(200);
     $success_message = "Merci ! Votre message a été envoyé.";
     exit(json_encode(['success' => $success_message]));
 } else {
-    // Set a 500 (internal server error) response code
+    // Renvoyer un code de réponse 500 (Internal Server Error)
     http_response_code(500);
-    $error_message = "Oups ! Il y a eu une erreur, veuillez réessayer s'il vous plait.";
+    $error_message = "Oups ! Une erreur s'est produite, veuillez réessayer.";
     exit(json_encode(['error' => $error_message]));
 }

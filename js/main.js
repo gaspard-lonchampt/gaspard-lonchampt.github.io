@@ -1,79 +1,58 @@
 AOS.init({ once: true });
 const form = document.querySelector('form');
-const errorDiv = document.getElementById("-messages");
-urlParams = new URLSearchParams(window.location.search);
+const errorDiv = document.getElementById("error-messages"); // Assurez-vous que cet ID correspond à un élément dans votre HTML.
 
 const setMessage = (message, color) => {
   errorDiv.textContent = message;
   errorDiv.style.color = color;
 };
 
+const clearFormFields = () => {
+  form.reset(); // Cette fonction efface tous les champs du formulaire.
+};
+
 const handleFormSubmit = event => {
   event.preventDefault();
 
-  // Get the form data
-  const formData = new FormData(form);
+  const formData = new FormData();
+  formData.append('name', form.name.value);
+  formData.append('surname', form.surname.value);
+  formData.append('email', form.email.value);
+  formData.append('besoin', form.besoin.value);
 
-  // Send the form data to the PHP script using AJAX
-  const xhr = new XMLHttpRequest();
-  xhr.open('POST', 'contact.php');
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      // Parse the JSON response
-      const response = JSON.parse(xhr.responseText);
-
-      // Display the success or error message
-      if (response.success) {
-        setMessage(response.success, "green");
-      } else {
-        setMessage(response.error, "red");
+  fetch('contact_form.php', {
+    method: 'POST',
+    body: formData,
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    } else {
+      return response.json();
+    })
+    .then(data => {
+      if (data.success) {
+        setMessage(data.success, "green");
+        clearFormFields(); // Efface les champs du formulaire si l'envoi est un succès.
+      } else {
+        setMessage(data.error, "red");
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
       alert('An error occurred. Please try again.');
-    }
-  };
-  xhr.send(formData);
+    });
 };
 
 const handleNavbarBurgerClick = () => {
-  // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
   $(".navbar-burger").toggleClass("is-active");
   $(".navbar-menu").toggleClass("is-active");
 };
 
-const handleHasDropdownClick = () => {
-  // Toggle the "is-active" class on the "navbar-menu"
-  $(".has-dropdown").toggleClass("is-active");
-};
-
-const handleAnchorClick = e => {
-  e.preventDefault();
-
-  document.querySelector(e.target.getAttribute('href')).scrollIntoView({
-    behavior: 'smooth'
-  });
-};
-
-const handleTopLinkClick = e => {
-  e.preventDefault();
-  $('body, html').scrollTop(0, {
-    behavior: 'smooth'
-  });
-};
-
 $(document).ready(() => {
-  // Check for click events on the navbar burger icon
   $(".navbar-burger").click(handleNavbarBurgerClick);
-
-  // Check for click events on the navbar burger icon
   $(".has-dropdown").click(handleHasDropdownClick);
 });
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', handleAnchorClick);
-});
-
-$('a[href="#top"]').on('click', handleTopLinkClick);
 
 const errorMessage = urlParams.get("error");
 const successMessage = urlParams.get("success");

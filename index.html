@@ -13,15 +13,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6LWZHBDCKK"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-6LWZHBDCKK');
-    </script>
 </head>
 
 <body>
@@ -764,16 +755,17 @@
                 <div class="column is-1"></div>
                 <div class="column is-two-fifths">
                     <form action="/php/contact_form.php" method="post" enctype="multipart/form-data">
-                        <div class="has-text-centered">
+                        <div class="has-text-centered pb-3">
                             <h3 class="subtitle mt-2 is-uppercase">me contacter</h3>
                             <p class="control is-expanded">
-                                <input type="email" value="" class="input is-link required email mb-4" id="mce-EMAIL"
-                                    placeholder="Nom">
-                                <input type="text" value="" class="input is-link required email mb-4"
-                                    placeholder="Prénom">
-                                <input type="text" value="" name="EMAIL" class="input is-link required email mb-4"
-                                    placeholder="Mail">
-                                <input type="text" value="" class="input is-link required email mb-4" id="description"
+                                <input type="text" required value="" name="name"
+                                    class="input is-link required email mb-4" placeholder="Nom">
+                                <input type="text" required value="" name="surname"
+                                    class="input is-link required email mb-4" placeholder="Prénom">
+                                <input type="email" required value="" name="email"
+                                    class="input is-link required email mb-4" placeholder="Mail">
+                                <input type="text" required value="" name="besoin"
+                                    class="input is-link required email mb-4" id="description"
                                     placeholder="Votre besoin">
                                 <input type="text" name="phone" style="display: none;">
                             </p>
@@ -802,7 +794,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" id="submit-button">Envoyer
+                        <button type="submit" name="submit" class="button is-size-7-mobile" id="submit-button">Envoyer
                         </button>
                     </form>
                     <div id="error-messages"></div>
