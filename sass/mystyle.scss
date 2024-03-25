@@ -62,8 +62,52 @@ $navbar-dropdown-item-hover-background-color: $primary;
 $navbar-dropdown-item-hover-color: $title;
 $navbar-dropdown-arrow: $white;
 
+.navbar-start>.navbar-item {
+  padding-left: 0.75rem; // ajustez cette valeur selon l'espacement désiré
+  padding-right: 0.75rem; // ajustez cette valeur selon l'espacement désiré
+}
 .navbar-link:not(.is-arrowless):hover::after {
   border-color: $title;
+}
+
+// $navbar-background-start: #f0b492; // Couleur de début du gradient
+// $navbar-background-end: darken(#f0b492, 15%); // Couleur de fin du gradient assombrie
+
+@media only screen and (min-width: 960px) {
+  .navbar {
+    background: linear-gradient(90deg, rgba(216, 117, 41, 1) 0%, rgba(240, 180, 146, 1) 32%, rgba(240, 180, 146, 1) 100%);
+  }
+  .navbar-brand .navbar-item img {
+    max-height: 6rem !important;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .navbar-item {
+    &.has-dropdown {
+      .navbar-dropdown {
+        display: none;
+      }
+
+      &.is-active {
+        .navbar-dropdown {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.image-accueil::after {
+  content: "Hortense LOT Magnétisme, Géobiologie  Nettoyage énergétique";
+  white-space: pre; // Respecte les retours à la ligne dans content
+  position: absolute;
+  top: 50%; // Centrer le texte verticalement
+  left: 10%; // Centrer le texte horizontalement
+  color: #fff; // Couleur du texte
+  text-align: center; // Centrer le texte
+  font-size: 2em; // Taille du texte
+  // Ajoutez ici d'autres styles comme l'ombre du texte si nécessaire
 }
 
 .paragraphs {
@@ -71,10 +115,11 @@ $navbar-dropdown-arrow: $white;
   color: $paragraph-color;
   font-weight: $paragraph-weight;
   font-size: $paragraph-size;
+  text-align: justify;
 }
 
 .hortense {
-  color: $subtitle-color !important;
+  // color: $subtitle-color !important;
   font-family: $subtitle-family !important;
   font-weight: bold;
 }
@@ -90,9 +135,18 @@ $navbar-dropdown-arrow: $white;
   /* Firefox */
 }
 
+.phone {
+  display: none;
+}
+
 // icone
 i {
   color: $icon-color;
+}
+
+.section {
+  padding-top: 5rem; // Ajustez cette valeur selon le décalage
+  margin-top: -5rem; // Ajustez cette valeur selon le décalage
 }
 
 // ajustement affichage desktop hero banner
@@ -200,9 +254,14 @@ html {
   }
 }
 
-// logo
-.navbar-item img {
+// logo mobile
+@media only screen and (max-width: 960px) {
+.navbar-brand .navbar-item img {
   max-height: 5rem !important;
+  background: radial-gradient(circle, rgba(216, 117, 41, 1) 29%, rgba(240, 180, 146, 1) 69%, rgba(240, 180, 146, 1) 100%);
+  padding: 0.5em; // Ajout d'un peu d'espace autour du logo
+  border-radius: 9em; // Adoucit les coins si le fond dépasse légèrement
+  }
 }
 
 // custom scss fin
@@ -223,4 +282,4 @@ html {
 @import "../node_modules/bulma/sass/grid/_all.sass";
 @import "../node_modules/bulma/sass/helpers/visibility.sass";
 @import "../node_modules/bulma/sass/components/card.sass";
-@import "../node_modules/bulma/sass/elements/image.sass"
+@import "../node_modules/bulma/sass/elements/image.sass";
