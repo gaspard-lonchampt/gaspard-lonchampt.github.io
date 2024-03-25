@@ -99,15 +99,25 @@ $navbar-dropdown-arrow: $white;
 }
 
 .image-accueil::after {
-  content: "Hortense LOT Magnétisme, Géobiologie  Nettoyage énergétique";
+  content: 'Hortense Lot\aMagnétisme, Géobiologie\aNettoyage énergétique';
   white-space: pre; // Respecte les retours à la ligne dans content
   position: absolute;
-  top: 50%; // Centrer le texte verticalement
+  top: 10%; // Centrer le texte verticalement
   left: 10%; // Centrer le texte horizontalement
   color: #fff; // Couleur du texte
-  text-align: center; // Centrer le texte
+  text-align: left; // Centrer le texte
   font-size: 2em; // Taille du texte
-  // Ajoutez ici d'autres styles comme l'ombre du texte si nécessaire
+}
+
+.image-accompagnement::after {
+  content: "L’accompagnement au mieux-être\aPersonnes, animaux, lieux";
+  white-space: pre; // Respecte les retours à la ligne dans content
+  position: absolute;
+  top: 10%; // Centrer le texte verticalement
+  left: 10%; // Centrer le texte horizontalement
+  color: #fff; // Couleur du texte
+  text-align: left; // Centrer le texte
+  font-size: 2em; // Taille du texte
 }
 
 .paragraphs {

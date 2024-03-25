@@ -33,13 +33,24 @@
   }
 }
 .image-accueil::after {
-  content: "Hortense LOT Magnétisme, Géobiologie  Nettoyage énergétique";
+  content: "Hortense Lot\aMagnétisme, Géobiologie\aNettoyage énergétique";
   white-space: pre;
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 10%;
   color: #fff;
-  text-align: center;
+  text-align: left;
+  font-size: 2em;
+}
+
+.image-accompagnement::after {
+  content: "L’accompagnement au mieux-être\aPersonnes, animaux, lieux";
+  white-space: pre;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: #fff;
+  text-align: left;
   font-size: 2em;
 }
 
