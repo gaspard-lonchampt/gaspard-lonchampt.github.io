@@ -4,12 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-.navbar-item {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-}
-
 // Couleur de la marque
 $black: black;
 $white: white;
@@ -61,6 +55,25 @@ $navbar-dropdown-background-color: $primary;
 $navbar-dropdown-item-hover-background-color: $primary;
 $navbar-dropdown-item-hover-color: $title;
 $navbar-dropdown-arrow: $white;
+
+.navbar-item {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.navbar-item.hortense {
+    /*todo*/
+    margin-right: 0px;
+    color: $subtitle-color;
+}
+
+.navbar-link.navbar-item.hortense:after {
+  margin-right: 0px;
+  color: white;
+}
+
+
 
 .navbar-start>.navbar-item {
   padding-left: 0.75rem; // ajustez cette valeur selon l'espacement désiré

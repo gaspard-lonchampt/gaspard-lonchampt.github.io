@@ -6,6 +6,17 @@
   font-weight: bold;
 }
 
+.navbar-item.hortense {
+  /*todo*/
+  margin-right: 0px;
+  color: #32598c;
+}
+
+.navbar-link.navbar-item.hortense:after {
+  margin-right: 0px;
+  color: white;
+}
+
 .navbar-start > .navbar-item {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
