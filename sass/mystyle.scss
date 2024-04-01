@@ -2,7 +2,7 @@
 
 // Google font
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 .navbar-item {
   font-family: 'Roboto', sans-serif;
@@ -31,7 +31,7 @@ $subtitle-family: "Lato", sans-serif;
 $subtitle-color: $title;
 $subtitle-weight: bold;
 
-$paragraph-family: "Lato", sans-serif;
+$paragraph-family: "Playfair Display", serif;
 $paragraph-color: $black;
 $paragraph-weight: normal;
 $paragraph-size: 0.90em;
@@ -98,26 +98,28 @@ $navbar-dropdown-arrow: $white;
   }
 }
 
-.image-accueil::after {
-  content: 'Hortense Lot\aMagnétisme, Géobiologie\aNettoyage énergétique';
-  white-space: pre; // Respecte les retours à la ligne dans content
+.image-accueil > p {
   position: absolute;
-  top: 10%; // Centrer le texte verticalement
-  left: 10%; // Centrer le texte horizontalement
-  color: #fff; // Couleur du texte
-  text-align: left; // Centrer le texte
-  font-size: 2em; // Taille du texte
+  padding: 10px;
+  bottom: 20%;
+  right: 40px;
+  font-size: 39px;
+  font-family: $paragraph-family;
 }
 
-.image-accompagnement::after {
-  content: "L’accompagnement au mieux-être\aPersonnes, animaux, lieux";
-  white-space: pre; // Respecte les retours à la ligne dans content
-  position: absolute;
-  top: 10%; // Centrer le texte verticalement
-  left: 10%; // Centrer le texte horizontalement
-  color: #fff; // Couleur du texte
-  text-align: left; // Centrer le texte
-  font-size: 2em; // Taille du texte
+.image-accueil.image-accompagnement > p {
+  background: rgba(155, 195, 225, 0.7);
+  bottom: 10%;
+  padding: 20px;
+  color: #333;
+}
+
+.image-accueil > p > .sub-slogan {
+  font-size: 25px;
+}
+
+.image.author-img > img {
+    border-radius: 50%;
 }
 
 .paragraphs {
@@ -183,6 +185,18 @@ html {
 }
 
 // bandeaux
+.navbar.navbar-custom {
+
+}
+
+.hero-body {
+  margin-top: 100px;
+}
+
+.button.btn-contact {
+  background: rgba(90, 90, 90, .5);
+  box-shadow: 1px 1px 3px black;
+}
 
 .hero.is-info {
   padding-bottom: 4rem !important;
@@ -198,6 +212,21 @@ html {
     font-size: 2rem;
     line-height: 1.125;
   }
+}
+
+h3.subtitle {
+  margin-left: 83px;
+  font-size: 25px;
+}
+
+.subtitle.subtitle-heal {
+    font-size: 34px;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+.paragraphs {
+  padding-left: 40px;
 }
 
 .columns.is-vcentered {
@@ -228,10 +257,10 @@ html {
 }
 
 // button
-.button {
+.button, #submit-button {
   border-top: $secondary;
   font-weight: 600;
-  background-color: $secondary !important;
+  background-color: $secondary;
 }
 
 // custom margin

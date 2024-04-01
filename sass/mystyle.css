@@ -1,6 +1,5 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 .navbar-item {
   font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -32,30 +31,32 @@
     display: block;
   }
 }
-.image-accueil::after {
-  content: "Hortense Lot\aMagnétisme, Géobiologie\aNettoyage énergétique";
-  white-space: pre;
+.image-accueil > p {
   position: absolute;
-  top: 10%;
-  left: 10%;
-  color: #fff;
-  text-align: left;
-  font-size: 2em;
+  padding: 10px;
+  bottom: 20%;
+  right: 40px;
+  font-size: 39px;
+  font-family: "Playfair Display", serif;
 }
 
-.image-accompagnement::after {
-  content: "L’accompagnement au mieux-être\aPersonnes, animaux, lieux";
-  white-space: pre;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  color: #fff;
-  text-align: left;
-  font-size: 2em;
+.image-accueil.image-accompagnement > p {
+  background: rgba(155, 195, 225, 0.7);
+  bottom: 10%;
+  padding: 20px;
+  color: #333;
+}
+
+.image-accueil > p > .sub-slogan {
+  font-size: 25px;
+}
+
+.image.author-img > img {
+  border-radius: 50%;
 }
 
 .paragraphs {
-  font-family: "Lato", sans-serif;
+  font-family: "Playfair Display", serif;
   color: black;
   font-weight: normal;
   font-size: 0.9em;
@@ -69,13 +70,6 @@
 
 .echo_title {
   color: #32598c;
-}
-
-::-moz-placeholder {
-  color: black !important;
-  opacity: 1;
-  text-align: center;
-  /* Firefox */
 }
 
 ::placeholder {
@@ -115,6 +109,15 @@ html {
     transform: none !important;
   }
 }
+.hero-body {
+  margin-top: 100px;
+}
+
+.button.btn-contact {
+  background: rgba(90, 90, 90, 0.5);
+  box-shadow: 1px 1px 3px black;
+}
+
 .hero.is-info {
   padding-bottom: 4rem !important;
   padding-top: 4rem !important;
@@ -127,6 +130,21 @@ html {
   color: #ffdf00 !important;
   font-size: 2rem;
   line-height: 1.125;
+}
+
+h3.subtitle {
+  margin-left: 83px;
+  font-size: 25px;
+}
+
+.subtitle.subtitle-heal {
+  font-size: 34px;
+  text-transform: uppercase;
+  margin-left: 40px;
+}
+
+.paragraphs {
+  padding-left: 40px;
 }
 
 .columns.is-vcentered {
@@ -152,10 +170,10 @@ html {
   margin-right: 1.5rem;
 }
 
-.button {
+.button, #submit-button {
   border-top: #d9b1a3;
   font-weight: 600;
-  background-color: #d9b1a3 !important;
+  background-color: #d9b1a3;
 }
 
 .custom-margin-bottom {
@@ -226,6 +244,7 @@ fieldset[disabled] .file-name, fieldset[disabled] .select select, .select fields
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -392,9 +411,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
-  -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-          text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 article,
@@ -7351,7 +7368,6 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  min-height: -moz-min-content;
   min-height: min-content;
 }
 .tile.is-ancestor {
@@ -7989,4 +8005,6 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 .image.is-128x128 {
   height: 128px;
   width: 128px;
-}/*# sourceMappingURL=mystyle.css.map */
+}
+
+/*# sourceMappingURL=mystyle.css.map */
