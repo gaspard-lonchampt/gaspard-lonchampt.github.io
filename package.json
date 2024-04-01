@@ -1,0 +1,23 @@
+{
+  "name": "gaspard-lonchampt.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bulma": "^0.9.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaspard-lonchampt/gaspard-lonchampt.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaspard-lonchampt/gaspard-lonchampt.github.io/issues"
+  },
+  "homepage": "https://github.com/gaspard-lonchampt/gaspard-lonchampt.github.io#readme"
+}
