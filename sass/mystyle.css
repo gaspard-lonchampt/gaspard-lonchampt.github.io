@@ -1,18 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+.navbar-menu .navbar-start {
+  display: flex;
+  justify-content: center;
+  /*padding-left: 200px;*/
+}
+
+.navbar.navbar-custom {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
 .navbar-item {
-  font-family: "Roboto", sans-serif;
+  font-family: "Playfair Display", serif;
   font-style: normal;
   font-weight: bold;
 }
 
 .navbar-item.hortense {
   /*todo*/
+  position: relative;
   margin-right: 0px;
   color: #32598c;
+  font-size: 22px;
+  left: -10px;
+  top: -10px;
 }
 
-.navbar-link.navbar-item.hortense:after {
+.navbar-item.hortense > .hortense-slogan {
+  position: absolute;
+  width: 200px;
+  top: 75px;
+  left: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.navbar-start > .navbar-item.hortense::after {
   margin-right: 0px;
   color: white;
 }
@@ -26,9 +51,40 @@
   border-color: #32598c;
 }
 
+.logo > img {
+  color: #32598c;
+}
+
+#navbarBasicExample.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 0;
+  flex-shrink: initial;
+}
+
+#landscape.hero-body {
+  padding: 0;
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 0;
+}
+
+section.hero {
+  width: 100vw;
+}
+
+div img.slogan-img {
+  position: absolute;
+  left: -280px;
+  bottom: 20%;
+  height: 200px;
+}
+
 @media only screen and (min-width: 960px) {
   .navbar {
-    background: linear-gradient(90deg, rgb(216, 117, 41) 0%, rgb(240, 180, 146) 32%, rgb(240, 180, 146) 100%);
+    background: rgb(240, 180, 146);
   }
   .navbar-brand .navbar-item img {
     max-height: 6rem !important;
@@ -42,11 +98,89 @@
     display: block;
   }
 }
+@media only screen and (max-width: 1285px) {
+  .navbar.navbar-custom {
+    /*justify-content: flex-end;*/
+    padding-right: 180px;
+  }
+  .navbar.navbar-custom .btn-contact {
+    right: 20px;
+  }
+  .navbar.navbar-custom .head-telephone {
+    right: 36px;
+  }
+  .navbar.navbar-custom .navbar-item.hortense {
+    display: none;
+  }
+  p img.slogan-img {
+    height: 150px;
+    left: -240px;
+    top: 33px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  nav {
+    width: 100vw;
+    padding-right: 0;
+  }
+  nav.navbar.navbar-custom {
+    height: 100px;
+  }
+  .navbar-start {
+    flex-direction: column;
+    padding-left: 200px;
+  }
+  #navbarBasicExample.navbar-menu {
+    width: 100%;
+    display: none;
+  }
+  nav .navbar-burger {
+    position: absolute;
+    right: 0;
+    left: calc(100vw - 15px);
+    height: calc(100% - 5px);
+  }
+  #navbarBasicExample.navbar-menu.is-active {
+    width: 240px;
+    left: 0;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    height: auto;
+    box-shadow: 2px 2px 10px #444;
+    padding-bottom: 20px;
+    top: 0;
+  }
+  #navbarBasicExample.navbar-menu.is-active .navbar-start {
+    padding-left: 0;
+  }
+  .navbar-end .button.btn-contact {
+    margin-top: 30px;
+  }
+  .navbar-end .head-telephone {
+    margin-top: 5px;
+    margin-left: 25px;
+  }
+  .navbar-end .button.btn-contact, .navbar-end .head-telephone {
+    position: static;
+    margin-left: 10px;
+  }
+  .navbar-item.has-dropdown .navbar-dropdown {
+    display: none;
+  }
+  .navbar-item.has-dropdown.is-active .navbar-dropdown {
+    display: block;
+  }
+  .contact-logo {
+    position: relative;
+    top: -50px;
+  }
+}
 .image-accueil > p {
   position: absolute;
   padding: 10px;
-  bottom: 20%;
-  right: 40px;
+  bottom: 15%;
+  right: 100px;
   font-size: 39px;
   font-family: "Playfair Display", serif;
 }
@@ -59,6 +193,8 @@
 }
 
 .image-accueil > p > .sub-slogan {
+  position: relative;
+  top: -25px;
   font-size: 25px;
 }
 
@@ -125,8 +261,17 @@ html {
 }
 
 .button.btn-contact {
-  background: rgba(90, 90, 90, 0.5);
+  position: absolute;
+  right: 50px;
+  top: 20px;
+  background: rgb(217, 177, 163);
   box-shadow: 1px 1px 3px black;
+}
+
+.head-telephone {
+  position: absolute;
+  right: 61px;
+  top: 65px;
 }
 
 .hero.is-info {
@@ -212,11 +357,15 @@ h3.subtitle {
 @media only screen and (max-width: 960px) {
   .navbar-brand .navbar-item img {
     max-height: 5rem !important;
-    background: radial-gradient(circle, rgb(216, 117, 41) 29%, rgb(240, 180, 146) 69%, rgb(240, 180, 146) 100%);
     padding: 0.5em;
     border-radius: 9em;
   }
 }
+.info-contact p {
+  text-align: left !important;
+  padding-left: 10px;
+}
+
 /* Bulma Utilities */
 .file-cta,
 .file-name, .select select, .textarea, .input, .button {
