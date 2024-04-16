@@ -1,4 +1,4 @@
-AOS.init({ once: true });
+AOS.init({ once: true }); 
 
 $(document).ready(() => {
   // Votre code existant pour le burger menu et le dropdown
