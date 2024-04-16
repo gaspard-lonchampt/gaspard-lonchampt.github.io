@@ -59,7 +59,7 @@ $navbar-dropdown-arrow: $white;
 .navbar-menu .navbar-start {
     display: flex;
     justify-content: center;
-    /*padding-left: 200px;*/
+    padding-left: 200px;
 }
 
 .navbar.navbar-custom {
@@ -82,11 +82,12 @@ $navbar-dropdown-arrow: $white;
     font-size: 22px;
     left: -10px;
     top: -10px;
+    font-family: $paragraph-family !important;
 }
 
 .navbar-item.hortense > .hortense-slogan {
     position: absolute;
-    width: 200px;
+    width: 215px;
     top: 75px;
     left: 10px;
     font-size: 14px;
@@ -286,10 +287,17 @@ div img.slogan-img {
 }
 
 .image-accueil.image-accompagnement > p {
-    background: rgba(155, 195, 225, 0.7);
+    /*background: rgba(155, 195, 225, 0.7);*/
     bottom: 10%;
+    left: 2rem;
     padding: 20px;
-    color: #333;
+    color: #FFF;
+}
+
+#accompagnement .image-accompagnement img {
+    position: relative;
+    width: 100vw;
+    left: 0;
 }
 
 .image-accueil > p > .sub-slogan {
