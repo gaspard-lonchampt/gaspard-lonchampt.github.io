@@ -223,6 +223,13 @@ div img.slogan-img {
   color: #32598c;
 }
 
+::-moz-placeholder {
+  color: black !important;
+  opacity: 1;
+  text-align: center;
+  /* Firefox */
+}
+
 ::placeholder {
   color: black !important;
   opacity: 1;
@@ -425,7 +432,6 @@ fieldset[disabled] .file-name, fieldset[disabled] .select select, .select fields
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 
@@ -592,7 +598,9 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   text-rendering: optimizeLegibility;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
 }
 
 article,
@@ -7549,6 +7557,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
+  min-height: -moz-min-content;
   min-height: min-content;
 }
 .tile.is-ancestor {
@@ -8186,6 +8195,4 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 .image.is-128x128 {
   height: 128px;
   width: 128px;
-}
-
-/*# sourceMappingURL=mystyle.css.map */
+}/*# sourceMappingURL=mystyle.css.map */
