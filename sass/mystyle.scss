@@ -496,48 +496,28 @@ h3.subtitle {
     padding-left: 10px;
 }
 
-// slide 
+// slide
+.splide__slide__container {
+    padding: 3rem 5rem;
+}
 
-// .splide__slide {
-//     padding: 6rem;
-//     display: flex;
-//     justify-content: center;
-//     background: #ECF0F1;
+.splide__pagination__page {
+    background: $subtitle-color !important;
+}
 
-// }
+.splide__pagination__page.is-active {
+    background: $primary !important;
+    transform: scale(1.7) !important;
+}
 
-// .splide__slide__container {
-//     width: 600px;
-//     text-align: center;
-// }
+.splide__slide {
 
-// .slide__content {
-//     margin: 1rem 0;
-//     font-size: 1.3rem;
-// }
+}
 
-// .slide-img__wrapper {
-//     display: flex;
-//     align-items: center;
+.slide__content p {
+    padding: 0 4rem;
+}
 
-// }
-
-// .slide-img {
-//     width: 60px;
-//     height: 60px;
-//     border-radius: 50%;
-//     max-width: 100%;
-//     max-height: 100%;
-// }
-
-// .slide-img__caption {
-//     margin-left: 1rem;
-// }
-
-// .slide-img__caption span {
-//     color: #2E86C1;
-//     font-weight: 500;
-// }
 
 // custom scss fin
 
