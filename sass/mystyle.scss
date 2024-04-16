@@ -111,6 +111,9 @@ $navbar-dropdown-arrow: $white;
 
 .logo > img {
     color: $subtitle-color;
+    width: 150px;
+    position: relative;
+    top: 3px;
 }
 
 #navbarBasicExample.navbar-menu {
@@ -127,6 +130,7 @@ $navbar-dropdown-arrow: $white;
 .navbar-brand {
     position: absolute;
     left: 0;
+    width: 100vw;
 }
 
 section.hero {
